@@ -1,0 +1,50 @@
+<div class="header">
+  <div class="header__section">
+    <div class="header__logo">
+      <a routerLink="/cargarHome">
+        <div class="header__logo-img-no-responsive"></div>
+      </a>
+    </div>
+    <div class="header__search">
+      <div class="header__search-text">
+        <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+          <input
+            type="text"
+            class="header__search-text-input"
+            placeholder="Buscar..."
+            name="txtBusqueda"
+            formControlName="txtBusqueda"
+          />
+          <div class="header__search-text-icon">
+            <button class="header__search-text-icon-button" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-container">
+    <ul class="menu-horizontal">
+      <li><a routerLink="/inicio">Inicio</a></li>
+      <li><a routerLink="/libros">Libros</a></li>
+      <li><a routerLink="/compras">Carrito de Compras</a></li>
+      <li><a routerLink="/alquiler">Carrito de Alquiler</a></li>
+      <li><a routerLink="/librosalquilados">Alquileres Activos</a></li>
+      <li><a routerLink="/nosotros">Nosotros</a></li>
+    </ul>
+  </div>
+  <div class="user-container" *ngIf="type === 'user'">
+    <label>{{ userNom }} {{ userApell }}</label>
+    <div class="user-button-information" id="user-button-information">
+      <div class="user-button-information-flex">
+        <a href="#">Pedidos</a> <a href="#">Datos</a>
+      </div>
+    </div>
+    <label style="margin-left: 10px; margin-right: 10px">|</label>
+    <div class="user-icon" (click)="showHide()"></div>
+  </div>
+</div>

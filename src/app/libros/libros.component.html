@@ -1,0 +1,123 @@
+<div class="home-container">
+  <div class="page-container">
+    <app-navbar></app-navbar>
+    <div class="main">
+      <div class="section">
+        <h1>LIBROS</h1>
+        <div class="carousel">
+          <div align="left" class="slick-list" id="slick-list">
+            <div class="slick-track" id="track">
+              <div class="slick" *ngFor="let libro of libroList">
+                <div class="orient">
+                  <figure>
+                    <img
+                      [src]="sanitizer.bypassSecurityTrustUrl(libro.img64)"
+                      alt="{{ libro.titulo }}"
+                    />
+                  </figure>
+                  <div class="content">
+                    <div class="content_tittle">
+                      <strong>
+                        <p
+                          title="{{ libro.titulo }}"
+                          style="
+                            text-align: left;
+                            font-size: 20pt;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                          "
+                        >
+                          {{ libro.titulo }}
+                        </p>
+                      </strong>
+                    </div>
+
+                    <div class="limit__a__space">
+                      <p style="text-align: justify; height: 150px">
+                        {{ libro.descripcion }}
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: row;
+                        align-content: flex-start;
+                      "
+                    >
+                      <p style="text-align: left; margin-bottom: 20px">
+                        <strong>Precio:</strong>
+                      </p>
+                      <p style="text-align: left; margin-left: 10px">
+                        {{ libro.precio }}
+                      </p>
+                      <p style="text-align: left; margin-left: 10px">
+                        <strong>Estado:</strong>
+                      </p>
+                      <p style="text-align: left; margin-left: 10px">
+                        {{ libro.estado }}
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        display: flex;
+                        flex-direction: row;
+                        align-content: stretch;
+                      "
+                    >
+                      <button
+                        [disabled]="libro.estado === 'Agotado'"
+                        [ngClass]="{
+                          'disabled-button': libro.estado === 'Agotado'
+                        }"
+                        class="form__submit"
+                        (click)="addBuyCar(libro)"
+                        style="margin-right: 10px"
+                      >
+                        COMPRAR
+                      </button>
+
+                      <button
+                        [disabled]="libro.estado === 'Agotado'"
+                        [ngClass]="{
+                          'disabled-button': libro.estado === 'Agotado'
+                        }"
+                        class="form__submit"
+                        (click)="addRentCar(libro)"
+                      >
+                        ALQUILAR
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+        <p>Derechos reservados por TOSHOKAN 2023</p>
+      </div>
+    </div>
+  </div>
+</div>

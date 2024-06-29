@@ -1,0 +1,92 @@
+<div class="home-container">
+  <div class="page-container">
+    <app-navbar></app-navbar>
+    <div class="main">
+      <div class="section">
+        <h1>RECOMENDADOS</h1>
+        <div class="carousel">
+          <h3>Top en ventas en esta temporada</h3>
+          <div class="slick-list" id="slick-list" align="center">
+            <button
+              (click)="move(1)"
+              class="slick-arrow slick-prev"
+              id="button-prev"
+            >
+              &lsaquo;
+            </button>
+            <div align="center" class="slick-track" id="track">
+              <div class="slick" *ngFor="let libNum of numberRandomList1">
+                <div class="orient">
+                  <figure>
+                    <img [src]="sanitizer.bypassSecurityTrustUrl(libroList[libNum].img64)" alt="{{ libroList[libNum].titulo }} Imagen">
+                    <figcaption>{{ libroList[libNum].titulo }}</figcaption>
+
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <button
+              (click)="move(2)"
+              class="slick-arrow slick-next"
+              id="button-next"
+            >
+              &rsaquo;
+            </button>
+          </div>
+        </div>
+        <div class="carousel">
+          <h3>Libros Mejores Valorados</h3>
+          <div class="slick-list" id="slick-list-2">
+            <button
+              (click)="move2(1)"
+              class="slick-arrow slick-prev"
+              id="button-prev-2"
+            >
+              &lsaquo;
+            </button>
+            <div align="center" class="slick-track" id="track-2">
+              <div class="slick" *ngFor="let libNum of numberRandomList2">
+                <div class="orient">
+                  <figure>
+                    <img [src]="sanitizer.bypassSecurityTrustUrl(libroList[libNum].img64)" alt="{{ libroList[libNum].titulo }} Imagen">
+                    <figcaption>{{ libroList[libNum].titulo }}</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <button
+              (click)="move2(2)"
+              class="slick-arrow slick-next"
+              id="button-next-2"
+            >
+              &rsaquo;
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-content">
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+        <p>Derechos reservados por TOSHOKAN 2023</p>
+      </div>
+    </div>
+  </div>
+</div>

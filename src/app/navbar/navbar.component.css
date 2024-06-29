@@ -1,0 +1,165 @@
+.header {
+  display: flex;
+  width: 100%;
+  background-color: #dd1c1c;
+  padding: 0em 3.125em;
+}
+
+.header__section {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.header__logo {
+  width: 100%;
+  height: 100px; /* Ajusta la altura según sea necesario */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  background-image: url(/assets/images/Logo_Banner_Toshokan.png);
+}
+
+.header__logo-img-no-responsive {
+  height: 100%;
+  width: 100%;
+}
+
+.header__search {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.header__search-text {
+  position: relative;
+  margin: auto 0;
+  width: 60%;
+}
+
+.header__search-text-input {
+  height: 3em;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 2em;
+  font-size: 0.8em;
+  padding: 0 1em 0 1em;
+}
+
+.header__search-text-icon {
+  position: absolute;
+  font-size: 1.2em;
+  right: 0;
+  top: 0;
+  margin: 0.25em 0.8em 0 0;
+  color: rgb(148, 148, 148);
+}
+
+.header__search-text-icon i {
+  transition: 1s;
+}
+
+.header__search-text-icon i:hover {
+  transform: rotate(400deg);
+}
+
+.header__search-text-icon-button {
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgb(148, 148, 148);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 0 3.125em;
+  font-size: 1em;
+}
+
+.nav-container {
+  display: flex;
+}
+
+.menu-horizontal {
+  list-style: none;
+  display: flex;
+  font-weight: bold;
+}
+
+.menu-horizontal > li {
+  display: flex;
+  align-items: center;
+}
+
+.menu-horizontal > li > a {
+  padding: 1.18em 2.5em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.menu-horizontal > li:hover {
+  background-color: #dd1c1ca9;
+  border-top: none;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 0.8em;
+  position: relative;
+}
+
+.user-container label {
+  padding-right: 1em;
+}
+
+.user-container i {
+  border-left: 0.1625em solid white;
+  padding: 0.2813em 0.2813em 0.2813em 1em;
+  cursor: pointer;
+}
+
+.user-button-information {
+  position: absolute;
+  width: 6em;
+  bottom: -99.4px;
+  right: -10px;
+  height: 100px;
+  padding: 5px 10px;
+  background-color: #000;
+  display: none;
+}
+
+.user-button-information-flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-button-information a {
+  text-decoration: none;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #fff;
+  text-align: center;
+  display: flex;
+}
+
+.user-icon {
+  background-image: url(/assets/images/user_icon.png);
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20px;
+}

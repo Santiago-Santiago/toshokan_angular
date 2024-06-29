@@ -1,0 +1,91 @@
+<div class="home-container">
+  <div class="page-container">
+    <app-navbar></app-navbar>
+    <div class="main">
+      <div class="section">
+        <h1>CARRITO DE COMPRAS</h1>
+        <div align="center" id="list__panel">
+          <div>
+            <form (ngSubmit)="pagarCarritoCompras()" ngNativeValidate>
+              <table border="0" class="list__table" style="color: white">
+                <thead *ngIf="buyCarList.length > 0">
+                  <tr class="list__table__min__tr">
+                    <th class="list__table__min" style="color: white; max-width: 200px">N°</th>
+                    <th class="list__table__min" style="color: white; max-width: 200px">USUARIO</th>
+                    <th class="list__table__min" style="color: white; max-width: 200px">TITULO</th>
+                    <th class="list__table__min" style="color: white; max-width: 200px">STOCK</th>
+                    <th class="list__table__min" style="color: white; max-width: 200px">CANTIDAD</th>
+                    <th class="list__table__min" style="color: white; max-width: 200px">PRECIO</th>
+                    <th class="list__table__min" style="color: white; max-width: 200px">ACCIONES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let reg of buyCarList; let i = index" class="list__table__min__tr">
+                    <td class="list__table__min">{{ i + 1 }}</td>
+                    <td class="list__table__min">{{ reg.objUsuario.nombre }}</td>
+                    <td class="list__table__min">{{ reg.objLibro.titulo }}</td>
+                    <td class="list__table__min">{{ reg.stockDisponible }}</td>
+                    <td class="list__table__min">
+                      <input required [ngModel]="quantityList[i]"
+                        (ngModelChange)="updateQuantity(i, $event)"
+                        [name]="'txtDiasAlquiler' + reg.id"
+                        type="number"/>
+                    </td>
+                    <td class="list__table__min">{{ reg.precio }}</td>
+                    <td class="list__table__min" style="text-align: center;">
+                      <div class="tooltip" style="opacity: 1">
+                        <a
+                          class="adelete"
+                          (click)="eliminarDelCarrito(reg.id)"
+                          style="
+                            text-decoration: none;
+                            color: white;
+                            cursor: pointer;
+                          "
+                        >
+                          <img class="imagen-con-hover" alt="" src="/assets/images/delete_icon_black.png" /></a>
+                        <span class="tooltiptext"></span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button
+                type="submit"
+                *ngIf="buyCarList.length > 0"
+                class="form__submit"
+                style="
+                  margin-left: 10px;
+                  margin-top: 50px;
+                  margin-bottom: 50px;
+                  cursor: pointer;
+                "
+              >
+                COMPRAR<img
+                  style="margin-left: 10px"
+                  alt=""
+                  src="/assets/images/buy_icon.png"
+                />
+              </button>
+            </form>
+            <div *ngIf="buyCarList.length < 1" class="list__table__min" style="font-size: 30pt; margin-top: 20px; margin-bottom: 20px; text-align: center;">
+              <strong>~ Carrito sin elementos activos ~</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+        </ul>
+        <p>Derechos reservados por TOSHOKAN 2023</p>
+      </div>
+    </div>
+  </div>
+</div>

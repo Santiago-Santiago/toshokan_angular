@@ -1,0 +1,223 @@
+.home-container {
+  font-size: 16px;
+  background-image: url(/assets/images/Libreria.jpg);
+  background-attachment: fixed;
+  backdrop-filter: blur(0.1em);
+}
+.page-container {
+  margin: 0 3.2em;
+  box-shadow: 0.0625rem 0.0625rem 0.9375rem 0.375rem #000000;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+}
+
+.section {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(102, 119, 109, 0.61);
+}
+
+.section h1 {
+  padding: 0.6em 0 0.6em 0;
+  letter-spacing: 1em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+}
+
+.carousel {
+  background-color: rgb(167, 166, 166);
+  max-width: 100%;
+  margin: 0.85em 0.85em 0.85em 0.85em;
+  border-radius: 2em;
+}
+
+.carousel h3 {
+  padding: 1em 0 0 1em;
+  letter-spacing: 0.5em;
+}
+
+.slick-list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+  display: flex;
+}
+
+.slick {
+  position: relative;
+  width: 18em;
+  padding: 0 1.125rem;
+  display: flex;
+}
+
+.slick figure {
+  margin-top: 1em;
+  display: flex;
+  margin-bottom: 1em;
+  padding: 20px;
+  border-radius: 1em;
+}
+
+.slider-top-1 {
+  background-color: blue;
+  /*background-image: url(../../images/mySQL-logo.webp);*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 10px;
+}
+
+.slider-top-1 p {
+  margin-top: 220px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slick .slider-top-1 {
+  width: 220px;
+  padding: 1em 1em 0 1em;
+  border-radius: 1.5em;
+  transition: 0.2s ease-in-out;
+  height: 300px;
+}
+
+.orient {
+  border-radius: 1em;
+  margin-left: 30px;
+}
+
+.orient figure img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 5px;
+  height: 300px;
+}
+
+.orient figure {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  color: white;
+  width: 260px;
+}
+
+.orient figure figcaption {
+  height: 40px;
+  max-height: 40px;
+  /* Evitar que el texto sobrepase el contenedor */
+  overflow: hidden;
+  /* Truncar el texto con puntos suspensivos (...) al final */
+  text-overflow: ellipsis;
+  /* Asegurar que el texto no se rompa entre palabras */
+  white-space: nowrap;
+}
+
+.slick .slider-top-1:hover {
+  opacity: 0.85;
+}
+
+.slick-arrow {
+  border-radius: 1.875em;
+  background-color: #fff;
+  position: absolute;
+  z-index: 4;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  border: 1px solid rgb(143, 143, 143);
+  cursor: pointer;
+  font-size: 2em;
+}
+
+.slick-prev {
+  left: 0px;
+}
+
+.slick-next {
+  right: 0px;
+}
+
+.footer {
+  background-color: brown;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+  width: 100vw;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
+}

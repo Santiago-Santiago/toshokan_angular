@@ -1,0 +1,239 @@
+.disabled-button {
+  background-color: #ccc; /* Cambia el color de fondo cuando el botón está desactivado */
+  color: #999; /* Cambia el color del texto cuando el botón está desactivado */
+  cursor: not-allowed; /* Cambia el cursor cuando el botón está desactivado */
+}
+
+/* Estilos generales */
+.home-container {
+  font-size: 16px;
+  background-image: url(/assets/images/Libreria.jpg);
+  background-attachment: fixed;
+  backdrop-filter: blur(0.1em);
+}
+
+.page-container {
+  margin: 0 3.2em;
+  box-shadow: 0.0625rem 0.0625rem 0.9375rem 0.375rem #000000;
+}
+
+.main {
+  display: flex;
+  flex: 1;
+}
+
+/* Estilos de la sección principal */
+.section {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(102, 119, 109, 0.61);
+  padding: 1em 0;
+}
+
+.section h1 {
+  letter-spacing: 1em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  padding: 0.6em 0;
+}
+
+.carousel {
+  background-color: rgb(167, 166, 166);
+  max-width: 100%;
+  margin: 0.85em;
+  border-radius: 2em;
+}
+
+/* Estilos de los elementos del carrusel */
+.slick-track {
+  display: flex;
+  flex-direction: column; /* Mostrar los elementos uno debajo del otro */
+  align-items: center; /* Centrar los elementos horizontalmente */
+  gap: 1rem; /* Espacio entre elementos */
+}
+
+.slick {
+  padding: 1.125rem; /* Añadir padding uniforme */
+  width: 100%;
+}
+
+.slick p {
+  text-align: left; /* Alinear texto a la izquierda */
+  padding: 1em 0; /* Añadir espacio alrededor del texto */
+  height: auto; /* Permitir altura automática */
+  max-height: none; /* Permitir que el texto se expanda */
+  overflow: visible; /* Permitir que el texto se desborde si es necesario */
+  margin: 0; /* Quitar márgenes innecesarios */
+}
+
+.slick img {
+  width: 100%; /* Ajustar imagen al ancho disponible */
+  max-width: none; /* Permitir que la imagen mantenga su tamaño original */
+  height: auto; /* Permitir altura automática */
+  border-radius: 1.5em;
+  transition: 0.2s ease-in-out;
+  background-color: red;
+}
+
+.orient {
+  background-color: rgb(244, 213, 213);
+  border-radius: 1em;
+  display: flex;
+  padding: 1em; /* Añadir espacio uniforme alrededor del contenido */
+  margin: 1em 0; /* Añadir margen superior e inferior */
+}
+
+.orient figure img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  height: 350px;
+  margin: auto;
+  width: 300px;
+}
+
+.orient figure {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 300px;
+}
+
+.content {
+  margin-left: 20px;
+}
+
+.content_tittle {
+  max-width: 700px;
+  /* Evitar que el texto sobrepase el contenedor */
+  overflow: hidden;
+  /* Truncar el texto con puntos suspensivos (...) al final */
+  text-overflow: ellipsis;
+  /* Asegurar que el texto no se rompa entre palabras */
+  white-space: nowrap;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* Línea punteada para indicar tooltip */
+  cursor: help; /* Cambia el cursor al pasar el mouse */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden; /* Inicialmente oculto */
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px; /* Alineado al centro */
+  opacity: 0; /* Invisible por defecto */
+  transition: opacity 0.3s; /* Transición suave */
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Estilos de los botones */
+.form__submit {
+  border: none;
+  background: rgba(0, 0, 0, 0.678);
+  color: #fff;
+  width: 180px;
+  font-size: 1em;
+  border-radius: 0.5em;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.267);
+  outline: 0.1875rem solid rgba(221, 85, 85, 0.267);
+  margin-top: -20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.form__submit:active {
+  background: linear-gradient(to top, rgb(110, 6, 6), #dd1c1c);
+}
+
+/* Estilos del pie de página */
+.footer {
+  grid-row: 7/8;
+  grid-column: 1/4;
+  background-color: brown;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.footer-bottom {
+  background: #000;
+  width: 100vw;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
+}

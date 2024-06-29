@@ -1,0 +1,143 @@
+<div class="home-container">
+  <div class="page-container">
+    <app-navbar></app-navbar>
+    <div class="main">
+      <div class="section">
+        <h1>LIBROS ALQUILADOS</h1>
+
+        <div align="center" id="list__panel">
+          <div>
+            <form>
+              <table border="0" class="list__table" style="color: white">
+                <thead *ngIf="boletaAlquilerList.length > 0">
+                  <tr class="list__table__min__tr">
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      N°
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      USUARIO
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      TITULO
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      IMPORTE TOTAL
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      ALQUILADO
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      DIAS
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      VENCIMIENTO
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      ENTREGA
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      DIAS DE RETRASO
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      MORA
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- LISTADO CARRITO DE ALQUILER USUARIO -->
+                  <tr
+                    *ngFor="let reg of boletaAlquilerList; let i = index"
+                    class="list__table__min__tr"
+                  >
+                    <td class="list__table__min">{{ i + 1 }}</td>
+                    <td class="list__table__min">
+                      {{ reg.objUsuario.nombre }}
+                    </td>
+                    <td class="list__table__min">{{ reg.objLibro.titulo }}</td>
+                    <td class="list__table__min">{{ reg.importeTotal }}</td>
+                    <td class="list__table__min">{{ reg.fechaAlquiler }}</td>
+                    <td class="list__table__min">{{ reg.diasAlquilados }}</td>
+                    <td class="list__table__min">{{ reg.fechaVencimiento }}</td>
+                    <td class="list__table__min">{{ reg.fechaEntrega }}</td>
+                    <td
+                      class="list__table__min"
+                      style="background-color: red"
+                      *ngIf="reg.diasRetraso > 0"
+                    >
+                      {{ reg.diasRetraso }}
+                    </td>
+                    <td
+                      class="list__table__min"
+                      style="background-color: red"
+                      *ngIf="reg.diasRetraso > 0"
+                    >
+                      {{ reg.mora }}
+                    </td>
+                    <td class="list__table__min" *ngIf="reg.diasRetraso <= 0">
+                      {{ reg.diasRetraso }}
+                    </td>
+                    <td class="list__table__min" *ngIf="reg.diasRetraso <= 0">
+                      {{ reg.mora }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+        <p>Derechos reservados por TOSHOKAN 2023</p>
+      </div>
+    </div>
+  </div>
+</div>
