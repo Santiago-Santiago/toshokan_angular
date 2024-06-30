@@ -67,6 +67,7 @@ export class GuardarlibroComponent {
 
   ngOnInit(): void {
     //this.usuarioID = sessionStorage.getItem('userLoggedInId')!;
+    this.obtenerLibro();
 
     this.autorService.listar().subscribe((data) => {
       this.autorList = data;
@@ -79,8 +80,6 @@ export class GuardarlibroComponent {
     this.editorialService.listar().subscribe((data) => {
       this.editorialList = data;
     });
-
-    this.obtenerLibro();
   }
 
   obtenerLibro() {
