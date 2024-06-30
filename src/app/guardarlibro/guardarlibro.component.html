@@ -4,11 +4,13 @@
     <div class="main">
       <div class="section">
         <h2>Guardar libro</h2>
-        <form class="form-container">
+        <form class="form-container" (ngSubmit)="registrarLibro()"
+          ngNativeValidate>
           <div class="form-content">
             <div class="form-group">
               <label for="id_prod" class="form-label">TITULO</label>
-              <input
+              <input [(ngModel)]="libro.titulo" placeholder="Ingresa el Titulo"
+                required
                 type="text"
                 class="form-control"
                 id="nombre"
@@ -17,88 +19,98 @@
             </div>
             <div class="form-group">
               <label for="des_prod" class="form-label">DESCRIPCION</label>
-              <input
+              <input [(ngModel)]="libro.descripcion" placeholder="Ingresa la Descripcion"
+                required
                 type="text"
-                name="apellido"
+                name="descripcion"
                 class="form-control"
-                id="apellido"
+                id="descripcion"
               />
             </div>
             <div class="form-group">
               <label for="" class="form-label">AUTOR</label>
-              <select id="" class="form-select" name="">
-                <option value="0">Seleccione...</option>
-                <option></option>
+              <select required [(ngModel)]="libro.objAutor.id" id="autor" class="form-select" name="autor" >
+                <option [value]="0" value="{{0}}" selected>Seleccione...</option>
+                <option *ngFor="let aut of autorList" [value]="aut.id" value="{{aut.id}}">
+                  {{ aut.nombre }}
+                </option>
               </select>
             </div>
             <div class="form-group">
-              <label for="stk_prod" class="form-label">FECHA DE PUBLICACION</label>
-              <input
+              <label for="fec_public" class="form-label">FECHA DE PUBLICACION</label>
+              <input [(ngModel)]="libro.fechaPublicacion" placeholder="Ingresa la fecha de publicacion"
+                required
                 type="date"
-                name="fecha_nacimiento"
+                name="fec_public"
                 class="form-control"
-                id="fecha_nacimiento"
+                id="fec_public"
               />
             </div>
             <div class="form-group">
               <label for="" class="form-label">CATEGORIA</label>
-              <select id="" class="form-select" name="">
-                <option value="0">Seleccione...</option>
-                <option></option>
+              <select id="categoria" class="form-select" name="categoria" [(ngModel)]="libro.objCategoria.id" placeholder="Ingresa la categoria"
+                required>
+                <option value="0" [value]="0" selected>Seleccione...</option>
+                <option *ngFor="let cat of categoriaList" value="{{cat.id}}" [value]="cat.id">{{cat.nombre}}</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="" class="form-label">EDITORIAL</label>
-              <select id="" class="form-select" name="">
-                <option value="0">Seleccione...</option>
-                <option></option>
+              <label for="editorial" class="form-label">EDITORIAL</label>
+              <select id="editorial" class="form-select" name="editorial" [(ngModel)]="libro.objEditorial.id" placeholder="Ingresa la editorial"
+                required>
+                <option value="0" [value]="0" selected>Seleccione...</option>
+                <option *ngFor="let edit of editorialList" value="{{edit.id}}" [value]="edit.id">{{edit.nombre}}</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="celular" class="form-label">PAGINAS</label>
-              <input
+              <label for="paginas" class="form-label">PAGINAS</label>
+              <input [(ngModel)]="libro.paginas" placeholder="Ingresa el numero de paginas"
+                required
                 type="number"
-                name="celular"
+                name="paginas"
                 class="form-control"
-                id="celular"
+                id="paginas"
               />
             </div>
             <div class="form-group">
-              <label for="correo" class="form-label">STOCK DISPONIBLE</label>
-              <input
+              <label for="stockDisponible" class="form-label">STOCK DISPONIBLE</label>
+              <input [(ngModel)]="libro.stockDisponible" placeholder="Ingresa el numero de stock disponible"
+                required
                 type="number"
-                name="correo"
+                name="stockDisponible"
                 class="form-control"
-                id="correo"
+                id="stockDisponible"
               />
             </div>
             <div class="form-group">
-              <label for="correo" class="form-label">STOCK EN ALQUILER</label>
-              <input
+              <label for="stockEnAlquiler" class="form-label">STOCK EN ALQUILER</label>
+              <input [(ngModel)]="libro.stockEnAlquiler" placeholder="Ingresa el numero de stock en Alquiler"
+                required
                 type="number"
-                name="correo"
+                name="stockEnAlquiler"
                 class="form-control"
-                id="correo"
+                id="stockEnAlquiler"
               />
             </div>
             <div class="form-group">
-              <label for="correo" class="form-label">PRECIO</label>
-              <input
+              <label for="precio" class="form-label">PRECIO</label>
+              <input [(ngModel)]="libro.precio" placeholder="Ingresa el numero de stock disponible"
+                required
                 type="number"
-                name="correo"
+                name="precio"
                 class="form-control"
-                id="correo"
+                id="precio"
               />
             </div>
             <div class="form-group">
-              <label for="correo" class="form-label">ESTADO</label>
-              <input
-                type="text"
-                name="correo"
-                class="form-control"
-                id="correo"
-              />
+              <label for="estado" class="form-label">ESTADO</label>
+              <select id="estado" class="form-select" name="estado" [(ngModel)]="libro.estado" placeholder="Ingresa el estado"
+                required>
+                <option value="0" [value]="0" selected>Seleccione...</option>
+                <option value="DISPONIBLE" [value]="'DISPONIBLE'">DISPONIBLE</option>
+                <option value="AGOTADO" [value]="'AGOTADO'">AGOTADO</option>
+              </select>
             </div>
             <div class="form-group form-actions">
               <button type="submit" class="btn btn-primary">Guardar</button>

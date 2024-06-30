@@ -27,7 +27,7 @@ export class CargoService {
     return this.http.put<Cargo>(this.baseUrl + `/${id}`, empleado);
   }
 
-  public eliminar(id: number): Observable<any> {
+  public eliminar(id: string): Observable<any> {
     return this.http.delete(this.baseUrl + `/${id}`);
   }
 }

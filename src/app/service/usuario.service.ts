@@ -26,6 +26,9 @@ export class UsuarioService {
   public actualizar(id: String, usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>(this.baseUrl + `/${id}`, usuario);
   }
+  public eliminar(id: string): Observable<any> {
+    return this.http.delete(this.baseUrl + `/${id}`);
+  }
 
   public validarIngreso(
     username: String,

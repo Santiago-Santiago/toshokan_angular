@@ -13,7 +13,7 @@
         </div>
         <div align="center" id="list__panel">
           <div>
-            <form action="/paytocart" method="post">
+            <form>
               <table border="0" class="list__table" style="color: white">
                 <tr class="list__table__min__tr">
                   <th
@@ -77,50 +77,46 @@
                     ACCIONES
                   </th>
                 </tr>
-                <tr class="list__table__min__tr">
-                  <td class="list__table__min">ID</td>
-                  <td class="list__table__min">TITULO</td>
+                <tr class="list__table__min__tr" *ngFor="let lib of libroList">
+                  <td class="list__table__min">{{lib.id}}</td>
+                  <td class="list__table__min">{{lib.titulo}}</td>
                   <!-- Reemplaza con datos reales del usuario -->
-                  <td class="list__table__min">DESCRIPCION</td>
-                  <td class="list__table__min">AUTOR</td>
+                  <td class="list__table__min">{{lib.descripcion}}</td>
+                  <td class="list__table__min">{{lib.objAutor.nombre}}</td>
                   <!-- Mostrar el stock actual del libro -->
-                  <td class="list__table__min">PAGINAS</td>
-                  <td class="list__table__min">STOCK</td>
-                  <td class="list__table__min">STOCKALQ</td>
-                  <td class="list__table__min">PRECIO</td>
-                  <td class="list__table__min">ESTADO</td>
+                  <td class="list__table__min">{{lib.paginas}}</td>
+                  <td class="list__table__min">{{lib.stockDisponible}}</td>
+                  <td class="list__table__min">{{lib.stockEnAlquiler}}</td>
+                  <td class="list__table__min">{{lib.precio}}</td>
+                  <td class="list__table__min">{{lib.estado}}</td>
                   <td class="list__table__min" style="text-align: center">
-                    <div class="tooltip">
-                      <a
+                    <div class="toop">
+                      <a (click)="eliminarLibro(lib.id)"
                         style="
                           text-decoration: none;
                           color: white;
                           cursor: pointer;
                         "
                       >
-                        <img
+                        <img class="imagen-con-hover"
                           alt=""
-                          src="/assets/images/delete_icon.png"
-                        />Eliminar
+                          src="/assets/images/delete_icon_black.png"
+                        />
                       </a>
-                      <span class="tooltiptext"></span>
-                    </div>
-                  </td>
-                  <td class="list__table__min" style="text-align: center">
-                    <div class="tooltip">
-                      <a routerLink="/guardarlibro"
+
+                      <a (click)="editarLibro(lib.id)"
                         style="
                           text-decoration: none;
                           color: white;
                           cursor: pointer;
                         "
                       >
-                        <img
+                        <img class="imagen-con-hover-edit"
                           alt=""
-                          src="/assets/images/delete_icon.png"
-                        />Editar
+                          src="/assets/images/edit_icon_black.png"
+                        />
                       </a>
-                      <span class="tooltiptext"></span>
+                      <span class="dddd"></span>
                     </div>
                   </td>
                 </tr>
