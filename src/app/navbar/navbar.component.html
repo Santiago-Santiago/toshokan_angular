@@ -36,15 +36,12 @@
       <li><a routerLink="/librosalquilados">Alquileres Activos</a></li>
       <li><a routerLink="/nosotros">Nosotros</a></li>
     </ul>
-  </div>
-  <div class="user-container" *ngIf="type === 'user'">
-    <label>{{ userNom }} {{ userApell }}</label>
-    <div class="user-button-information" id="user-button-information">
-      <div class="user-button-information-flex">
-        <a href="#">Pedidos</a> <a href="#">Datos</a>
-      </div>
+    <div class="user-container" *ngIf="type === 'user'">
+      <label style="margin-left: 20px;">{{ userNom }} {{ userApell }}</label>
+      <label style="margin-left: 10px; margin-right: 10px">|</label>
+      <div class="user-icon"></div>
+      <div class="imagen-con-hover-exit" style="margin-left: 20px; cursor: pointer;" routerLink="/login"></div>
     </div>
-    <label style="margin-left: 10px; margin-right: 10px">|</label>
-    <div class="user-icon" (click)="showHide()"></div>
   </div>
+
 </div>

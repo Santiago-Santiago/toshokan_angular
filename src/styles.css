@@ -18,6 +18,18 @@
   content: url("/assets/images/delete_icon_white.png");
 }
 
+.imagen-con-hover-exit {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+  content: url("/assets/images/exit_icon_white.png");
+}
+
+.imagen-con-hover-exit:hover {
+  content: url("/assets/images/exit_icon_red.png");
+}
+
+
 .imagen-con-hover-edit {
   width: 20px; /* Ajusta el tamaño según tu diseño */
   height: 20px; /* Ajusta el tamaño según tu diseño */

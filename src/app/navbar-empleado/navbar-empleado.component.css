@@ -23,25 +23,30 @@
 
 
 .nav {
-  display: flex;
   justify-content: space-between;
   background-color: #000;
   padding: 0 3.125em;
-  font-size: 1em;
+  font-size: 15px;
 }
 
 .nav-container {
   display: flex;
+  margin: 0 auto;
+
 }
 
 .menu-horizontal {
   list-style: none;
   display: flex;
   font-weight: bold;
+  align-items: center;
+  height: 100%;
+
 }
 
 .menu-horizontal > li {
   display: flex;
+  height: 100%;
   align-items: center;
 }
 
@@ -61,14 +66,37 @@
   display: flex;
   align-items: center;
   color: #fff;
-  justify-content: space-around;
   font-weight: bold;
   font-size: 0.8em;
-  position: relative;
+  padding: 10px 0;
 }
 
 
+.user-button-information {
+  position: absolute;
+  width: 6em;
+  bottom: -99.4px;
+  right: -10px;
+  height: 100px;
+  padding: 5px 10px;
+  background-color: #000;
+  display: none;
+}
 
+.user-button-information-flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-button-information a {
+  text-decoration: none;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #fff;
+  text-align: center;
+  display: flex;
+}
 
 .user-icon {
   background-image: url(/assets/images/user_icon.png);

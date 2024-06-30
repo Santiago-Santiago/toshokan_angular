@@ -6,6 +6,26 @@
   backdrop-filter: blur(0.1em);
 }
 
+.imagen-con-hover {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+}
+
+.imagen-con-hover:hover {
+  content: url('/assets/images/delete_icon_white.png');
+}
+
+.imagen-con-hover-edit {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+}
+
+.imagen-con-hover-edit:hover {
+  content: url('/assets/images/edit_icon_white.png');
+}
+
 .page-container {
   margin: 0 3.2em;
   box-shadow: 0.0625rem 0.0625rem 0.9375rem 0.375rem #000000;
@@ -25,21 +45,13 @@
   background-color: rgba(102, 119, 109, 0.61);
 }
 
-.section h2 {
-  padding: 0.6em 0;
-  letter-spacing: 1em;
-  font-weight: bold;
-  text-align: center;
-  background-color: #fff;
-}
-.form-group {
+.title{
+  padding: 0.6em 17em;
   display: flex;
-  background-color: white;
-}
-.form-actions {
-  width: 100%;
-  padding: 3px 500px;
-  margin-bottom: 10px;
+  letter-spacing: 1em;
+  align-items: center;
+  font-weight: bold;
+  background-color: #ffffff;
 }
 
 .btn-primary {
@@ -54,15 +66,30 @@
   border: 1px solid transparent;
   padding: 0.575rem 2.85rem;
   font-size: 1rem;
+  content: url("/assets/images/plus_icon_white.png");
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .btn-primary:hover {
   color: #fff;
   background-color: #b30000;
   border-color: #850000;
+  content: url("/assets/images/plus_icon_black.png");
+
 }
+.form-group {
+  display: flex;
+  background-color: white;
+}
+.form-actions {
+  width: 100%;
+  padding: 3px 500px;
+  margin-bottom: 10px;
+}
+
+
 
 
 .slick-track {
