@@ -75,25 +75,30 @@
 }
 
 .nav {
-  display: flex;
   justify-content: space-between;
   background-color: #000;
   padding: 0 3.125em;
-  font-size: 1em;
+  font-size: 15px;
 }
 
 .nav-container {
   display: flex;
+  margin: 0 auto;
+
 }
 
 .menu-horizontal {
   list-style: none;
   display: flex;
   font-weight: bold;
+  align-items: center;
+  height: 100%;
+
 }
 
 .menu-horizontal > li {
   display: flex;
+  height: 100%;
   align-items: center;
 }
 
@@ -113,21 +118,11 @@
   display: flex;
   align-items: center;
   color: #fff;
-  justify-content: space-around;
   font-weight: bold;
   font-size: 0.8em;
-  position: relative;
+  padding: 10px 0;
 }
 
-.user-container label {
-  padding-right: 1em;
-}
-
-.user-container i {
-  border-left: 0.1625em solid white;
-  padding: 0.2813em 0.2813em 0.2813em 1em;
-  cursor: pointer;
-}
 
 .user-button-information {
   position: absolute;

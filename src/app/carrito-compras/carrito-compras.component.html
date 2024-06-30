@@ -3,7 +3,7 @@
     <app-navbar></app-navbar>
     <div class="main">
       <div class="section">
-        <h1>CARRITO DE COMPRAS</h1>
+        <h2>CARRITO DE COMPRAS</h2>
         <div align="center" id="list__panel">
           <div>
             <form (ngSubmit)="pagarCarritoCompras()" ngNativeValidate>
@@ -68,7 +68,7 @@
                 />
               </button>
             </form>
-            <div *ngIf="buyCarList.length < 1" class="list__table__min" style="font-size: 30pt; margin-top: 20px; margin-bottom: 20px; text-align: center;">
+            <div *ngIf="buyCarList.length < 1" class="list__table__min" style="font-size: 20pt; margin-top: 20px; margin-bottom: 20px; text-align: center;">
               <strong>~ Carrito sin elementos activos ~</strong>
             </div>
           </div>
