@@ -23,4 +23,20 @@ export class LibrosService {
   public buscarPorTitulo(consulta: String): Observable<Libro[]> {
     return this.http.get<Libro[]>(this.baseUrl + `/searchbar/${consulta}`);
   }
+
+  public registrar(libro: Libro): Observable<any> {
+    const libroToSend = {
+      ...libro,
+      imgBlob: null,
+    };
+    return this.http.post<Libro>(this.baseUrl, libroToSend);
+  }
+
+  public actualizar(id: String, libro: Libro): Observable<Libro> {
+    return this.http.put<Libro>(this.baseUrl + `/${id}`, libro);
+  }
+
+  public eliminar(id: string): Observable<any> {
+    return this.http.delete(this.baseUrl + `/${id}`);
+  }
 }

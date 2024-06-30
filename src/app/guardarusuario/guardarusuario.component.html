@@ -3,13 +3,15 @@
     <app-navbar-empleado></app-navbar-empleado>
     <div class="main">
       <div class="section">
-        <h2>Guardar usuario</h2>
-        <form class="form-container">
+        <h2>Guardar Usuario</h2>
+        <form class="form-container"(ngSubmit)="registrarUsuario()"
+          ngNativeValidate>
           <div class="form-content">
 
             <div class="form-group">
               <label for="id_prod" class="form-label">NOMBRES</label>
-              <input
+              <input [(ngModel)]="usuario.nombre" placeholder="Ingresa el Nombre"
+                required
                 type="text"
                 class="form-control"
                 id="nombre"
@@ -18,7 +20,8 @@
             </div>
             <div class="form-group">
               <label for="des_prod" class="form-label">APELLIDOS</label>
-              <input
+              <input [(ngModel)]="usuario.apellido" placeholder="Ingresa el Apellido"
+                required
                 type="text"
                 name="apellido"
                 class="form-control"
@@ -27,7 +30,8 @@
             </div>
             <div class="form-group">
               <label for="celular" class="form-label">CELULAR</label>
-              <input
+              <input [(ngModel)]="usuario.celular" placeholder="Ingresa el Celular"
+                required
               type="number"
               name="celular"
                 class="form-control"
@@ -36,8 +40,9 @@
             </div>
             <div class="form-group">
               <label for="pre_prod" class="form-label">CORREO</label>
-              <input
-                type="number"
+              <input [(ngModel)]="usuario.email" placeholder="Ingresa el correo"
+                required
+                type="email"
                 name="correo"
                 class="form-control"
                 id="correo"
@@ -45,7 +50,8 @@
             </div>
             <div class="form-group">
               <label for="id_prod" class="form-label">USUARIO</label>
-              <input
+              <input [(ngModel)]="usuario.username" placeholder="Ingresa el Nombre de Usuario"
+                required
                 type="text"
                 class="form-control"
                 id="usuario"
@@ -54,8 +60,9 @@
             </div>
             <div class="form-group">
               <label for="id_prod" class="form-label">PASSWORD</label>
-              <input
-                type="text"
+              <input [(ngModel)]="usuario.password" placeholder="Ingresa la contraseña"
+                required
+                type="password"
                 class="form-control"
                 id="password"
                 name="password"
