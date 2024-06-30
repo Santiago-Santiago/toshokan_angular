@@ -1,0 +1,132 @@
+<div class="home-container">
+  <div class="page-container">
+    <app-navbar-empleado></app-navbar-empleado>
+    <div class="main">
+      <div class="section">
+        <h2>Lista de empleados</h2>
+        <div class="form-group">
+          <div class="form-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              routerLink="/guardarempleado"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+        <div align="center" id="list__panel">
+          <div>
+            <form>
+              <table border="0" class="list__table" style="color: white">
+                <thead>
+                  <tr class="list__table__min__tr">
+                    <th class="list__table__min" style="max-width: 200px">
+                      CODIGO
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      NOMBRES
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      APELLIDOS
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      FECHANACIMIENTO
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      DNI
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      FECHACONTRATO
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      CELULAR
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      CORREO
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      CARGO
+                    </th>
+                    <th class="list__table__min" style="max-width: 200px">
+                      ACCIONES
+                    </th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let emp of empList">
+                  <tr class="list__table__min__tr">
+                    <td class="list__table__min">{{ emp.id }}</td>
+                    <td class="list__table__min">{{ emp.nombre }}</td>
+                    <!-- Reemplaza con datos reales del usuario -->
+                    <td class="list__table__min">{{ emp.apellido }}</td>
+                    <td class="list__table__min">{{ emp.fechaNacimiento }}</td>
+                    <!-- Mostrar el stock actual del libro -->
+                    <td class="list__table__min">{{ emp.dni }}</td>
+                    <td class="list__table__min">{{ emp.fechaContrato }}</td>
+                    <td class="list__table__min">{{ emp.celular }}</td>
+                    <td class="list__table__min">{{ emp.email }}</td>
+                    <td class="list__table__min">{{ emp.objCargo.nombre }}</td>
+                    <td class="list__table__min" style="text-align: center">
+                      <div class="toolti">
+                        <a
+                          hidden
+                          style="
+                            text-decoration: none;
+                            color: white;
+                            cursor: pointer;
+                          "
+                        >
+                          <img
+                            class="imagen-con-hover"
+                            alt=""
+                            src="/assets/images/delete_icon_black.png"
+                          />
+                        </a>
+                        <a
+                          (click)="editarEmpleado(emp.id)"
+                          style="
+                            text-decoration: none;
+                            color: white;
+                            cursor: pointer;
+                          "
+                        >
+                          <img
+                            class="imagen-con-hover-edit"
+                            alt=""
+                            src="/assets/images/edit_icon_black.png"
+                          />
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+        <p>Derechos reservados por TOSHOKAN 2023</p>
+      </div>
+    </div>
+  </div>
+</div>

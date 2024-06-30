@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../service/usuario.service';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { EmpleadoService } from '../service/empleado.service';
+import { Empleado } from '../model/empleado';
 
 @Component({
   selector: 'app-login-inicio',
@@ -14,6 +16,7 @@ export class LoginInicioComponent {
   loginEstate: string = '';
   primeraLetra: string = '';
   userList: Usuario[] = [];
+  empList: Empleado[] = [];
 
   user: Usuario = {
     id: '',
@@ -25,11 +28,28 @@ export class LoginInicioComponent {
     password: '',
   };
 
+  emp: Empleado = {
+    id: '',
+    nombre: '',
+    apellido: '',
+    fechaNacimiento: '',
+    dni: '',
+    fechaContrato: '',
+    celular: '',
+    email: '',
+    objCargo: {
+      id: '',
+      nombre: ''
+    },
+    password: ''
+  };
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private userService: UsuarioService
+    private userService: UsuarioService,
+    private empleadoService: EmpleadoService
   ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
@@ -47,7 +67,7 @@ export class LoginInicioComponent {
     console.log(user.password);
   }
 
-  OnInit(){
+  OnInit() {
     sessionStorage.clear();
     console.log('se borro todooo');
   }
@@ -61,6 +81,27 @@ export class LoginInicioComponent {
       console.log('La primera letra es: ' + this.primeraLetra);
       if (this.primeraLetra == 'E') {
         console.log('Por aqui paso');
+        this.empleadoService
+          .validarIngreso(username, password)
+          .subscribe((response) => {
+            this.empList = response;
+
+            if (this.empList.length > 0) {
+              this.emp = this.empList[0];
+              sessionStorage.setItem('LoggedId', 'True');
+              sessionStorage.setItem('userLoggedInId', this.emp.id);
+              //this.imprimirUsuario(this.user);
+              this.empList = [];
+              const navigationExtras: NavigationExtras = {
+                skipLocationChange: true,
+                replaceUrl: true,
+              };
+              this.router.navigate(['/mantenimiento'], navigationExtras);
+            } else {
+              this.empList = [];
+              this.loginEstate = 'Credenciales de acceso no validas';
+            }
+          });
       } else {
         this.userService
           .validarIngreso(username, password)
@@ -84,11 +125,6 @@ export class LoginInicioComponent {
             }
           });
       }
-
-      // Maneja la lógica de inicio de sesión aquí
-      // Si el inicio de sesión falla, puedes configurar this.loginEstate para que muestre un mensaje de error
-      //console.log('Username:', username);
-      //console.log('Password:', password);
     } else {
       this.loginEstate = 'Por favor complete el formulario correctamente.';
     }

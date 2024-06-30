@@ -1,0 +1,135 @@
+<div class="home-container">
+  <div class="page-container">
+    <app-navbar-empleado></app-navbar-empleado>
+    <div class="main">
+      <div class="section">
+        <h2>Lista de usuarios</h2>
+        <div class="form-group">
+          <div class="form-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              routerLink="/guardarusuario"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+        <div align="center" id="list__panel">
+          <div>
+            <form action="/paytocart" method="post">
+              <table border="0" class="list__table" style="color: white">
+                <tr class="list__table__min__tr">
+                  <th
+                    class="list__table__min"
+                    style="color: white; max-width: 200px"
+                  >
+                    CODIGO
+                  </th>
+                  <th
+                    class="list__table__min"
+                    style="color: white; max-width: 200px"
+                  >
+                    NOMBRES
+                  </th>
+                  <th
+                    class="list__table__min"
+                    style="color: white; max-width: 200px"
+                  >
+                    APELLIDOS
+                  </th>
+                  <th
+                    class="list__table__min"
+                    style="color: white; max-width: 200px"
+                  >
+                    CELULAR
+                  </th>
+                  <th
+                    class="list__table__min"
+                    style="color: white; max-width: 200px"
+                  >
+                    CORREO
+                  </th>
+
+                  <th
+                    class="list__table__min"
+                    style="color: white; max-width: 200px"
+                  >
+                    ACCIONES
+                  </th>
+                </tr>
+                <tr class="list__table__min__tr">
+                  <td class="list__table__min">CODIGO</td>
+                  <td class="list__table__min">NOMBRES</td>
+                  <!-- Reemplaza con datos reales del usuario -->
+                  <td class="list__table__min">APELLIDOS</td>
+                  <td class="list__table__min">CELULAR</td>
+                  <!-- Mostrar el stock actual del libro -->
+                  <td class="list__table__min">CORREO</td>
+
+                  <td class="list__table__min" style="text-align: center">
+                    <div class="tooltip">
+                      <a
+                        style="
+                          text-decoration: none;
+                          color: white;
+                          cursor: pointer;
+                        "
+                      >
+                        <img
+                          alt=""
+                          src="/assets/images/delete_icon.png"
+                        />Eliminar
+                      </a>
+                      <span class="tooltiptext"></span>
+                    </div>
+                  </td>
+                  <td class="list__table__min" style="text-align: center">
+                    <div class="tooltip">
+                      <a
+                        routerLink="/guardarusuario"
+                        style="
+                          text-decoration: none;
+                          color: white;
+                          cursor: pointer;
+                        "
+                      >
+                        <img
+                          alt=""
+                          src="/assets/images/delete_icon.png"
+                        />Editar
+                      </a>
+                      <span class="tooltiptext"></span>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-content">
+        <ul class="socials">
+          <li>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-youtube"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-linkedin-square"></i></a>
+          </li>
+        </ul>
+        <p>Derechos reservados por TOSHOKAN 2023</p>
+      </div>
+    </div>
+  </div>
+</div>

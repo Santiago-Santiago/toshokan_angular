@@ -12,8 +12,8 @@ import { LibrosService } from '../service/libro.service';
 })
 export class NavbarComponent implements OnInit {
   searchForm: FormGroup;
-  userNom: string = 'Nombre';
-  userApell: string = 'Apellido';
+  userNom: string = '';
+  userApell: string = '';
   type: string = 'user'; // this should be set based on actual user data
 
   user: Usuario = {
