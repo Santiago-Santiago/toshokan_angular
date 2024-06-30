@@ -18,10 +18,11 @@
       <li><a routerLink="/liscategoria">Categoria</a></li>
       <li><a routerLink="/liseditorial">Editorial</a></li>
     </ul>
+    <div class="user-container" *ngIf="type === 'user'">
+      <label style="margin-left: 20px;">{{ userNom }} {{ userApell }}</label>
+      <label style="margin-left: 10px; margin-right: 10px">|</label>
+      <div class="user-icon"></div>
+      <div class="imagen-con-hover-exit" style="margin-left: 20px; cursor: pointer;" routerLink="/login"></div>    </div>
   </div>
-  <div class="user-container" *ngIf="type === 'user'">
-    <label>{{ userNom }} {{ userApell }}</label>
-    <label style="margin-left: 10px; margin-right: 10px">|</label>
-    <div class="user-icon"></div>
-  </div>
+
 </div>
