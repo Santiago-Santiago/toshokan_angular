@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="header__section">
+    <div class="header__logo">
+      <a routerLink="/mantenimiento">
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="nav">
+  <div class="nav-container">
+    <ul class="menu-horizontal">
+      <li><a routerLink="/lisempleado">Empleado</a></li>
+      <li><a routerLink="/lisusuario">Usuario</a></li>
+      <li><a routerLink="/lislibro">Libro</a></li>
+      <li><a routerLink="/lisautor">Autor</a></li>
+      <li><a routerLink="/liscargo">Cargo</a></li>
+      <li><a routerLink="/liscategoria">Categoria</a></li>
+      <li><a routerLink="/liseditorial">Editorial</a></li>
+    </ul>
+  </div>
+  <div class="user-container" *ngIf="type === 'user'">
+    <label>{{ userNom }} {{ userApell }}</label>
+    <label style="margin-left: 10px; margin-right: 10px">|</label>
+    <div class="user-icon"></div>
+  </div>
+</div>

@@ -3,7 +3,24 @@
     <app-navbar-empleado></app-navbar-empleado>
     <div class="main">
       <div class="section">
-        <h1>¡Bienvenido!</h1>
+        <h2>Guardar editorial</h2>
+        <form class="form-container">
+          <div class="form-content">
+            <div class="form-group">
+              <label for="id_prod" class="form-label">NOMBRE</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+              />
+            </div>
+            <div class="form-group form-actions">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-primary" routerLink="/liseditorial">Regresar</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <div class="footer">

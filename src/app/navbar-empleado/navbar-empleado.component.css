@@ -1,0 +1,80 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  background-color: #dd1c1c;
+  padding: 0em 3.125em;
+}
+
+.header__section {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+
+.header__logo {
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  background-image: url(../../images/Logo_Banner_Toshokan.png);
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 0 3.125em;
+  font-size: 1em;
+}
+
+.nav-container {
+  display: flex;
+}
+
+.menu-horizontal {
+  list-style: none;
+  display: flex;
+  font-weight: bold;
+}
+
+.menu-horizontal > li {
+  display: flex;
+  align-items: center;
+}
+
+.menu-horizontal > li > a {
+  padding: 1.18em 2.5em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+.menu-horizontal > li:hover {
+  background-color: #dd1c1ca9;
+  border-top: none;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 0.8em;
+  position: relative;
+}
+
+
+
+
+.user-icon {
+  background-image: url(../../images/user_icon.png);
+  width: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20px;
+}

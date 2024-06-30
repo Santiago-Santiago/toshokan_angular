@@ -20,6 +20,21 @@ import { LibrosAlquiladosComponent } from './libros-alquilados/libros-alquilados
 import { MantenimientoComponent } from './mantenimiento/mantenimiento.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarEmpleadoComponent } from './navbar-empleado/navbar-empleado.component';
+import { LisempleadoComponent } from './lisempleado/lisempleado.component';
+import { LisusuarioComponent } from './lisusuario/lisusuario.component';
+import { LislibroComponent } from './lislibro/lislibro.component';
+import { LisautorComponent } from './lisautor/lisautor.component';
+import { LiscargoComponent } from './liscargo/liscargo.component';
+import { LiscategoriaComponent } from './liscategoria/liscategoria.component';
+import { LiseditorialComponent } from './liseditorial/liseditorial.component';
+import { GuardarempleadoComponent } from './guardarempleado/guardarempleado.component';
+import { GuardarusuarioComponent } from './guardarusuario/guardarusuario.component';
+import { GuardarlibroComponent } from './guardarlibro/guardarlibro.component';
+import { GuardarautorComponent } from './guardarautor/guardarautor.component';
+import { GuardarcargoComponent } from './guardarcargo/guardarcargo.component';
+import { GuardareditorialComponent } from './guardareditorial/guardareditorial.component';
+import { GuardarcategoriaComponent } from './guardarcategoria/guardarcategoria.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +48,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NosotrosComponent,
     LibrosAlquiladosComponent,
     MantenimientoComponent,
+    NavbarEmpleadoComponent,
+    LisempleadoComponent,
+    LisusuarioComponent,
+    LislibroComponent,
+    LisautorComponent,
+    LiscargoComponent,
+    LiscategoriaComponent,
+    LiseditorialComponent,
+    GuardarempleadoComponent,
+    GuardarusuarioComponent,
+    GuardarlibroComponent,
+    GuardarautorComponent,
+    GuardarcargoComponent,
+    GuardarcategoriaComponent,
+    GuardareditorialComponent,
   ],
   imports: [
     BrowserModule,
