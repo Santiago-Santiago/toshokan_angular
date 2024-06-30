@@ -1,9 +1,29 @@
 /* General Styles */
 .home-container {
   font-size: 16px;
-  background-image: url(../../images/Libreria.jpg);
+  background-image: url(/assets/images/Libreria.jpg);
   background-attachment: fixed;
   backdrop-filter: blur(0.1em);
+}
+
+.imagen-con-hover {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+}
+
+.imagen-con-hover:hover {
+  content: url('/assets/images/delete_icon_white.png');
+}
+
+.imagen-con-hover-edit {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+}
+
+.imagen-con-hover-edit:hover {
+  content: url('/assets/images/edit_icon_white.png');
 }
 
 .page-container {

@@ -18,7 +18,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   display: flex;
-  background-image: url(../../images/Logo_Banner_Toshokan.png);
+  background-image: url(/assets/images/Logo_Banner_Toshokan.png);
 }
 
 
@@ -71,7 +71,7 @@
 
 
 .user-icon {
-  background-image: url(../../images/user_icon.png);
+  background-image: url(/assets/images/user_icon.png);
   width: 20px;
   background-size: contain;
   background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 .home-container {
   font-size: 16px;
-  background-image: url(../../images/Libreria.jpg);
+  background-image: url(/assets/images/Libreria.jpg);
   background-attachment: fixed;
   backdrop-filter: blur(0.1em);
 }

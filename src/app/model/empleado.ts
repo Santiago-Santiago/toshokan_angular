@@ -4,8 +4,8 @@ export interface Empleado {
   nombre: string;
   apellido: string;
   fechaNacimiento: string;
-  DNI: string;
   fechaContrato: string;
+  dni: string;
   celular: string;
   email: string;
   objCargo: Cargo;
