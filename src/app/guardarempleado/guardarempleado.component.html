@@ -4,21 +4,24 @@
     <div class="main">
       <div class="section">
         <h2>Guardar Empleado</h2>
-        <form class="form-container" (ngSubmit)="registrarEmpleado()">
+        <form class="form-container" (ngSubmit)="registrarEmpleado()" ngNativeValidate>
           <div class="form-content">
             <div class="form-group">
               <label for="id_prod" class="form-label">NOMBRE</label>
-              <input [(ngModel)]="empleado.nombre"
+              <input
+                [(ngModel)]="empleado.nombre"
                 type="text"
                 class="form-control"
                 id="nombre"
                 name="nombre"
-                placeholder="Ingresa el Nombre"
+                placeholder="Ingresa el Nombre" required
               />
             </div>
             <div class="form-group">
               <label for="des_prod" class="form-label">APELLIDO</label>
-              <input [(ngModel)]="empleado.apellido" placeholder="Ingresa el Apellido"
+              <input
+                [(ngModel)]="empleado.apellido"
+                placeholder="Ingresa el Apellido" required
                 type="text"
                 name="apellido"
                 class="form-control"
@@ -26,8 +29,12 @@
               />
             </div>
             <div class="form-group">
-              <label for="stk_prod" class="form-label">FECHA DE NACIMIENTO</label>
-              <input [(ngModel)]="empleado.fechaNacimiento" placeholder="Ingresa la fecha de nacimiento"
+              <label for="stk_prod" class="form-label"
+                >FECHA DE NACIMIENTO</label
+              >
+              <input
+                [(ngModel)]="empleado.fechaNacimiento" required
+                placeholder="Ingresa la fecha de nacimiento"
                 type="date"
                 name="fecha_nacimiento"
                 class="form-control"
@@ -36,7 +43,9 @@
             </div>
             <div class="form-group">
               <label for="pre_prod" class="form-label">DNI</label>
-              <input [(ngModel)]="empleado.dni" placeholder="Ingresa el DNI"
+              <input
+                [(ngModel)]="empleado.dni" required
+                placeholder="Ingresa el DNI"
                 type="number"
                 name="dni"
                 class="form-control"
@@ -44,8 +53,12 @@
               />
             </div>
             <div class="form-group">
-              <label for="fecha_contrato" class="form-label">FECHA DE CONTRATO</label>
-              <input [(ngModel)]="empleado.fechaContrato" placeholder="Ingresa La fecha de Contrato"
+              <label for="fecha_contrato" class="form-label"
+                >FECHA DE CONTRATO</label
+              >
+              <input
+                [(ngModel)]="empleado.fechaContrato" required
+                placeholder="Ingresa La fecha de Contrato"
                 type="date"
                 name="fecha_contrato"
                 class="form-control"
@@ -54,7 +67,9 @@
             </div>
             <div class="form-group">
               <label for="celular" class="form-label">CELULAR</label>
-              <input [(ngModel)]="empleado.celular" placeholder="Ingresa el Celular"
+              <input
+                [(ngModel)]="empleado.celular" required
+                placeholder="Ingresa el Celular"
                 type="text"
                 name="celular"
                 class="form-control"
@@ -63,7 +78,9 @@
             </div>
             <div class="form-group">
               <label for="correo" class="form-label">CORREO</label>
-              <input [(ngModel)]="empleado.email" placeholder="Ingresa el Correo"
+              <input
+                [(ngModel)]="empleado.email" required
+                placeholder="Ingresa el Correo"
                 type="email"
                 name="correo"
                 class="form-control"
@@ -72,14 +89,18 @@
             </div>
             <div class="form-group">
               <label for="" class="form-label">CARGO</label>
-              <select id="" class="form-select" name="" *ngFor="let cargo of cargoList">
-                <option [value]="0">Seleccione...</option>
-                <option [value]="cargo.id">{{cargo.nombre}}</option>
+              <select required [(ngModel)]="empleado.objCargo.id" id="cargo" class="form-select" name="cargo" >
+                <option [value]="0" value="{{0}}" selected>Seleccione...</option>
+                <option *ngFor="let cargo of cargoList" [value]="cargo.id" value="{{cargo.id}}">
+                  {{ cargo.nombre }}
+                </option>
               </select>
             </div>
             <div class="form-group">
               <label for="password" class="form-label">PASSWORD</label>
-              <input [(ngModel)]="empleado.password" placeholder="Ingresa la contraseña"
+              <input
+                [(ngModel)]="empleado.password" required
+                placeholder="Ingresa la contraseña"
                 type="password"
                 name="password"
                 class="form-control"
@@ -88,7 +109,13 @@
             </div>
             <div class="form-group form-actions">
               <button type="submit" class="btn btn-primary">Guardar</button>
-              <button type="button" class="btn btn-primary" routerLink="/lisempleado">Regresar</button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                routerLink="/lisempleado"
+              >
+                Regresar
+              </button>
             </div>
           </div>
         </form>

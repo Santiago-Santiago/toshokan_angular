@@ -44,12 +44,19 @@ const routes: Routes = [
   { path: 'lisusuario', component: LisusuarioComponent },
 
   { path: 'guardarempleado', component: GuardarempleadoComponent },
+  { path: 'guardarempleado/:idEmp', component: GuardarempleadoComponent },
   { path: 'guardarautor', component: GuardarautorComponent },
+  { path: 'guardarautor/:idAut', component: GuardarautorComponent },
   { path: 'guardarcargo', component: GuardarcargoComponent },
+  { path: 'guardarcargo/:idCar', component: GuardarcargoComponent },
   { path: 'guardarcategoria', component: GuardarcategoriaComponent },
+  { path: 'guardarcategoria/:idCate', component: GuardarcategoriaComponent },
   { path: 'guardareditorial', component: GuardareditorialComponent },
+  { path: 'guardareditorial/:idEdit', component: GuardareditorialComponent },
   { path: 'guardarlibro', component: GuardarlibroComponent },
+  { path: 'guardarlibro/:idLib', component: GuardarlibroComponent },
   { path: 'guardarusuario', component: GuardarusuarioComponent },
+  { path: 'guardarusuario/:idUser', component: GuardarusuarioComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

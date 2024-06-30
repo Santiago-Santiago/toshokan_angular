@@ -3,7 +3,6 @@
     <app-navbar-empleado></app-navbar-empleado>
     <div class="main">
       <div class="section">
-
         <h2>Lista de editoriales</h2>
         <div class="form-group">
           <div class="form-actions">
@@ -18,67 +17,75 @@
         </div>
         <div align="center" id="list__panel">
           <div>
-            <form action="/paytocart" method="post">
+            <form >
               <table border="0" class="list__table" style="color: white">
-                <tr class="list__table__min__tr">
-                  <th
-                    class="list__table__min"
-                    style="color: white; max-width: 200px"
-                  >
-                    CODIGO
-                  </th>
-                  <th
-                    class="list__table__min"
-                    style="color: white; max-width: 200px"
-                  >
-                    NOMBRE
-                  </th>
+                <thead>
+                  <tr class="list__table__min__tr">
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      CODIGO
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      NOMBRE
+                    </th>
+                    <th
+                      class="list__table__min"
+                      style="color: white; max-width: 200px"
+                    >
+                      ACCIONES
+                    </th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let edit of editorialList">
+                  <tr class="list__table__min__tr">
+                    <td class="list__table__min">{{ edit.id }}</td>
+                    <td class="list__table__min">{{ edit.nombre }}</td>
+                    <td class="list__table__min" style="text-align: center">
+                      <div class="tooltp">
+                        <a (click)="eliminarEditorial(edit.id)"
+                          style="
+                            text-decoration: none;
+                            color: white;
+                            cursor: pointer;
+                          "
+                        >
+                          <img
+                            class="imagen-con-hover"
+                            alt=""
+                            src="/assets/images/delete_icon_black.png"
+                          />
+                        </a>
 
-                  <th
-                    class="list__table__min"
-                    style="color: white; max-width: 200px"
-                  >
-                    ACCIONES
-                  </th>
-                </tr>
-                <tr class="list__table__min__tr">
-                  <td class="list__table__min">CODIGO</td>
-                  <td class="list__table__min">NOMBRE</td>
-                  <td class="list__table__min" style="text-align: center">
-                    <div class="tooltip">
-                      <a
-                        style="
-                          text-decoration: none;
-                          color: white;
-                          cursor: pointer;
-                        "
-                      >
-                        <img
-                          alt=""
-                          src="/assets/images/delete_icon.png"
-                        />Eliminar
-                      </a>
-                      <span class="tooltiptext"></span>
-                    </div>
-                  </td>
-                  <td class="list__table__min" style="text-align: center">
-                    <div class="tooltip">
-                      <a routerLink="/guardareditorial"
-                        style="
-                          text-decoration: none;
-                          color: white;
-                          cursor: pointer;
-                        "
-                      >
-                        <img
-                          alt=""
-                          src="/assets/images/delete_icon.png"
-                        />Editar
-                      </a>
-                      <span class="tooltiptext"></span>
-                    </div>
-                  </td>
-                </tr>
+                        <a
+                          (click)="editarEditorial(edit.id)"
+                          style="
+                            text-decoration: none;
+                            color: white;
+                            cursor: pointer;
+                          "
+                        >
+                          <img
+                            class="imagen-con-hover-edit"
+                            alt=""
+                            src="/assets/images/edit_icon_black.png"
+                          />
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" style="text-align: center">
+                      {{'Total de editoriales: '+ editorialList.length}}
+                    </td>
+                  </tr>
+                </tfoot>
               </table>
             </form>
           </div>

@@ -1,7 +1,7 @@
 import { Component, NgZone } from '@angular/core';
 import { CargoService } from '../service/cargo.service';
 import { EmpleadoService } from '../service/empleado.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Empleado } from '../model/empleado';
 import { Cargo } from '../model/cargo';
@@ -36,6 +36,7 @@ export class GuardarempleadoComponent {
     private cargoService: CargoService,
     private empleadoService: EmpleadoService,
     private router: Router,
+    private route: ActivatedRoute,
     private toastr: ToastrService,
     private ngZone: NgZone
   ) {}
@@ -45,9 +46,31 @@ export class GuardarempleadoComponent {
     this.cargoService.listar().subscribe((data) => {
       this.cargoList = data;
     });
+
+    this.obtenerEmpleado();
+  }
+
+  obtenerEmpleado() {
+    //captura el parametro enviado
+    const id = this.route.snapshot.params['idEmp'];
+
+    //llama al servicio para invocar al metodo buscar
+    this.empleadoService.buscar(id).subscribe(
+      (response) => {
+        this.empleado = response;
+      },
+      (error) => {
+        console.error('Error al obtener el producto: ' + error);
+      }
+    );
   }
 
   registrarEmpleado(): void {
+    const id: string = this.empleado.objCargo.id;
+    const nombre: string = this.empleado.objCargo.nombre;
+    console.log(
+      'el id cargo del empleado es : ' + id + 'y su nombre es ' + nombre
+    );
     this.empleadoService.registrar(this.empleado).subscribe(
       (data) => {
         if (data) {

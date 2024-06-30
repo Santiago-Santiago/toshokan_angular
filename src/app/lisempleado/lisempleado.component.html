@@ -61,7 +61,7 @@
                     <td class="list__table__min">{{ emp.apellido }}</td>
                     <td class="list__table__min">{{ emp.fechaNacimiento }}</td>
                     <!-- Mostrar el stock actual del libro -->
-                    <td class="list__table__min">{{emp.dni}}</td>
+                    <td class="list__table__min">{{ emp.dni }}</td>
                     <td class="list__table__min">{{ emp.fechaContrato }}</td>
                     <td class="list__table__min">{{ emp.celular }}</td>
                     <td class="list__table__min">{{ emp.email }}</td>
@@ -69,7 +69,7 @@
                     <td class="list__table__min" style="text-align: center">
                       <div class="toolti">
                         <a
-                          routerLink="/lisempleado"
+                          hidden
                           style="
                             text-decoration: none;
                             color: white;
@@ -83,7 +83,7 @@
                           />
                         </a>
                         <a
-                          routerLink="/guardarempleado"
+                          (click)="editarEmpleado(emp.id)"
                           style="
                             text-decoration: none;
                             color: white;

@@ -7,3 +7,23 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
+
+.imagen-con-hover {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+}
+
+.imagen-con-hover:hover {
+  content: url("/assets/images/delete_icon_white.png");
+}
+
+.imagen-con-hover-edit {
+  width: 20px; /* Ajusta el tamaño según tu diseño */
+  height: 20px; /* Ajusta el tamaño según tu diseño */
+  transition: transform 0.3s ease; /* Transición suave para efecto visual */
+}
+
+.imagen-con-hover-edit:hover {
+  content: url("/assets/images/edit_icon_white.png");
+}

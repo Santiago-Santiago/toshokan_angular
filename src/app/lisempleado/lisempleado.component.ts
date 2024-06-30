@@ -26,4 +26,8 @@ export class LisempleadoComponent {
       this.empList = data;
     });
   }
+
+  editarEmpleado(idEmp: string) {
+    this.router.navigate(['/guardarempleado', idEmp]);
+  }
 }
